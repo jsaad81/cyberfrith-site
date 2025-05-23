@@ -104,17 +104,20 @@
     transform: translateX(0);
 }
 
-/* Styling for the Kaspersky Map (NEWLY ADDED) */
+/* Styling for the Kaspersky Map */
 .map-container {
     border: 3px solid #0d9488; /* Teal border, adjust thickness and color as desired */
     border-radius: 8px; /* Slightly rounded corners for the border */
     overflow: hidden; /* Ensures border-radius applies correctly to iframe */
     box-shadow: 0 0 15px rgba(0, 200, 150, 0.5); /* Optional: A subtle glow effect */
+    position: relative; /* Needed for potential future adjustments */
 }
 
 /* Ensure the iframe fills its container */
 .kaspersky-map-iframe {
     display: block; /* Removes extra space below iframe */
+    width: 100%; /* Make sure it fills the container */
+    height: 500px; /* Set a specific height */
 }
 
 /* Custom scroll-to-top button (not included in HTML, but good to have) */
