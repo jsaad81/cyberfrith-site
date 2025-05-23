@@ -1,30 +1,128 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Families */
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
 }
-header {
-    background-color: #000;
-    padding: 1rem;
-    text-align: center;
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
 }
-nav a {
-    color: #00ccff;
-    margin: 0 10px;
-    text-decoration: none;
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-.hero {
-    text-align: center;
-    padding: 2rem;
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0; /* Hidden initially */
 }
-.strategy {
-    padding: 1rem 2rem;
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #1a1a1a;
-    color: #ccc;
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.7s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes pulseOnce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animate-pulse-once {
+    animation: pulseOnce 0.8s ease-in-out;
+}
+
+/* Intersection Observer Animations (handled by JS, but classes defined here) */
+.animated-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animated-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animated-wargame-item {
+    opacity: 0;
+    transform: translateX(-50px); /* Default for left side */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.animated-wargame-item.right {
+    transform: translateX(50px); /* For right side */
+}
+
+.animated-wargame-item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Custom scroll-to-top button (not included in HTML, but good to have) */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #0d9488; /* Teal background */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #14b8a6; /* Darker teal on hover */
+    transform: scale(1.1);
 }

@@ -1,49 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CyberFrith</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIT.NETWORK - Cyber Security Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>CyberFrith</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Trail of Fire</a>
-        </nav>
+<body class="bg-gray-900 text-gray-200 font-roboto">
+
+    <header class="bg-gray-800 text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold font-montserrat tracking-wide">Cyber Frith</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                    <li><a href="#services" class="hover:text-teal-400 transition duration-300">Services</a></li>
+                    <li><a href="#wargame" class="hover:text-teal-400 transition duration-300">Cyber War Game</a></li>
+                    <li><a href="#contact" class="hover:text-teal-400 transition duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>CyberTech that prepares your company for the future</h2>
-            <p class="tagline">Not just to survive—but to thrive.</p>
-        </section>
+    <section id="home" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://source.unsplash.com/random/1600x900/?cybersecurity,network');">
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="relative z-10 p-8 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold font-montserrat leading-tight text-white animate-fade-in-up">
+                IT AND CYBER SECURITY THAT PREPARES YOUR COMPANY FOR THE FUTURE
+            </h1>
+            <p class="mt-6 text-xl md:text-2xl text-gray-300 animate-fade-in-up delay-200">
+                Doing business in today's economy is challenging due to the digitalized world, which demands agility, vision for the future while keeping up to date on current threats.
+            </p>
+            <a href="#services" class="mt-10 inline-block bg-teal-600 hover:bg-teal-700 text-white text-lg font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 animate-fade-in-up delay-400">
+                Explore Our Solutions
+            </a>
+        </div>
+    </section>
 
-        <section class="strategy">
-            <h3>My Strategy</h3>
-            <article>
-                <h4>From Incident to Infrastructure</h4>
-                <p>Whether you’ve scaled, merged, or been breached—I meet you where the fire is and build from the foundation up.</p>
-            </article>
-            <article>
-                <h4>Security That Reflects Reality</h4>
-                <p>I don’t just detect, I architect defense—tools, methods, services tailored to your truth. Rooted in how your business truly operates.</p>
-            </article>
-            <article>
-                <h4>Human-Centered Cyber Leadership</h4>
-                <p>Training, advisory, presence—not automated rhetoric. I step into your space—not just your profiles—as both CI and cyber security.</p>
-            </article>
-        </section>
+    <section id="services" class="py-20 bg-gray-950">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold font-montserrat text-center mb-12 text-white">Our Strategy</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 card-animate">
+                    <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Cost-Effective & High-Impact IT & Cyber Security</h3>
+                    <p class="text-gray-300">Focused on business functions that underpin the enterprise's strategic advantages and the products most valued by its customers.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 card-animate">
+                    <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Cyber-Savvy Workforce</h3>
+                    <p class="text-gray-300">Maintaining a workforce where cyber resilience is everyone's duty, from the board to frontline personnel.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 card-animate">
+                    <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Digital Trust in New Products</h3>
+                    <p class="text-gray-300">Baking digital trust into new products early in the design phase, making it an essential and discreet aspect of all digital transformation programs.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 card-animate">
+                    <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Risk-Based Cyber-Assurance Programs</h3>
+                    <p class="text-gray-300">Designing programs for suppliers and business partners, fostering business agility and innovation while minimizing exposure to third-party related cyber threats.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 card-animate">
+                    <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Lean & Adaptive Governance Structures</h3>
+                    <p class="text-gray-300">Adopting efficient and highly effective governance structures that can swiftly and flexibly adapt to changing market needs or business circumstances.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 card-animate">
+                    <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Disaster Preparation Plans</h3>
+                    <p class="text-gray-300">Creating plans that prepare your organization for Natural, Human & Environmental disasters. Testing your plans via Tabletop, Functional or Full-Scale exercises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>Let’s rebuild from where the fire touched.</p>
-            <p>© 2025 CyberFrith. All rights reserved.</p>
-        </footer>
-    </main>
+    <section id="wargame" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold font-montserrat text-center mb-12 text-white">The Cyber War Game: Sharpen Your Defenses!</h2>
+
+            <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-lg shadow-2xl">
+                <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                    A wartime cyber security game, also known as a **cyber war game**, is a simulated cyber attack scenario designed to test and improve an organization's ability to prevent, detect, and respond to cyberattacks. It's inspired by military wargaming, involving opposing teams (**Red Team** and **Blue Team**) who simulate attacker tactics and defensive mechanisms in a controlled environment.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg border-l-4 border-teal-500 animate-slide-in-left">
+                        <h3 class="text-2xl font-semibold font-montserrat text-teal-400 mb-4">Purpose & Benefits:</h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li><strong class="text-white">Testing Preparedness:</strong> Assess readiness for real-world cyberattacks, identifying vulnerabilities.</li>
+                            <li><strong class="text-white">Improving Response:</strong> Train teams on effective incident response, communication, and decision-making under pressure.</li>
+                            <li><strong class="text-white">Enhancing Collaboration:</strong> Foster collaboration and communication among cross-functional teams (security, IT, legal, etc.).</li>
+                            <li><strong class="text-white">Identifying Vulnerabilities:</strong> Pinpoint specific weaknesses in systems, processes, and security controls.</li>
+                            <li><strong class="text-white">Building "Muscle Memory":</strong> Develop the ability to react effectively in real-time, even with limited information.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg border-r-4 border-purple-500 animate-slide-in-right">
+                        <h3 class="text-2xl font-semibold font-montserrat text-purple-400 mb-4">Key Elements:</h3>
+                        <ul class="space-y-4 text-gray-300">
+                            <li><strong class="text-white">Realistic Scenarios:</strong> Based on real-world attacks like spear phishing, ransomware, or data breaches.</li>
+                            <li><strong class="text-white">Red Team vs. Blue Team:</strong> Attackers (Red) try to penetrate, defenders (Blue) prevent and detect.</li>
+                            <li><strong class="text-white">Tabletop Exercises:</strong> Discussions and decisions in a meeting room, simulating real-time attacks.</li>
+                            <li><strong class="text-white">Cross-Functional Participation:</strong> Involves IT, security, legal, PR, reflecting real-world response.</li>
+                            <li><strong class="text-white">Learning & Improvement:</strong> Post-game analysis to identify areas for improvement and actionable plans.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button id="wargame-cta" class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 animate-pulse-once">
+                        Ready to Test Your Defenses? Let's Play!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-950">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold font-montserrat text-white mb-8">Get In Touch</h2>
+            <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                We're here to help your company prepare for the future. Contact us to discuss your IT and cyber security needs.
+            </p>
+            <a href="mailto:info@rit.network" class="inline-block bg-teal-600 hover:bg-teal-700 text-white text-lg font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                Email Us
+            </a>
+            </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; 2024 Cyber Frith. All rights reserved.</p>
+            <p class="mt-2">Built with ❤️ for RIT.NETWORK</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
