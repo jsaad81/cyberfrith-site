@@ -9,17 +9,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hero Text Typing Animation
+    // Hero Text Typing Animation with Rotating Phrases and Blinking Cursor
     const heroTextElement = document.getElementById('hero-text');
-    const heroTagline = "Secure your digital world with a mind forged in fire.";
+    const taglines = [
+        "Secure your digital world with a mind forged in fire.",
+        "Resilience isn't a feature. It's a foundation.",
+        "Code. Defend. Rebuild. Repeat.",
+        "Trust the signal. Disarm the noise."
+    ];
+    let phraseIndex = 0;
     let i = 0;
-    const typingSpeed = 50; // milliseconds per character
+    const typingSpeed = 50;
+    const pauseBetweenPhrases = 3000;
+
+    const cursorSpan = document.createElement('span');
+    cursorSpan.className = 'typing-cursor';
+    cursorSpan.textContent = '|';
+    heroTextElement.appendChild(cursorSpan);
 
     function typeWriter() {
-        if (i < heroTagline.length) {
-            heroTextElement.innerHTML += heroTagline.charAt(i);
+        if (i < taglines[phraseIndex].length) {
+            heroTextElement.insertBefore(document.createTextNode(taglines[phraseIndex].charAt(i)), cursorSpan);
             i++;
             setTimeout(typeWriter, typingSpeed);
+        } else {
+            setTimeout(() => {
+                heroTextElement.innerHTML = '';
+                heroTextElement.appendChild(cursorSpan);
+                i = 0;
+                phraseIndex = (phraseIndex + 1) % taglines.length;
+                typeWriter();
+            }, pauseBetweenPhrases);
         }
     }
 
@@ -29,28 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 typeWriter();
-                observer.unobserve(entry.target); // Stop observing once typing starts
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 }); // Trigger when 50% of hero is visible
+    }, { threshold: 0.5 });
 
     if (heroSection) {
         heroObserver.observe(heroSection);
     }
 
-
     // Intersection Observer for .cyber-animate elements (fade-in on scroll)
     const animatedElements = document.querySelectorAll('.cyber-animate');
     const animateOptions = {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: '0px 0px -50px 0px' // Adjust trigger point
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const animateObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Stop observing once animated
+                observer.unobserve(entry.target);
             }
         });
     }, animateOptions);
@@ -59,8 +78,31 @@ document.addEventListener('DOMContentLoaded', () => {
         animateObserver.observe(el);
     });
 
-    // Simple console log for flavor
-    console.log("Initializing CyberFrith Protocols...");
-    console.log("Threat Vector Analysis: Online");
-    console.log("Resilience Quotient: Optimal");
+    // Button Hover Glow Effect
+    document.querySelectorAll('button, .glow-on-hover').forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.classList.add('cyber-glow');
+        });
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('cyber-glow');
+        });
+    });
+
+    // AI Boot Logs
+    const bootLog = [
+        "Initializing CyberFrith Protocols...",
+        "→ Establishing encrypted comms link...",
+        "→ Syncing threat intel feeds...",
+        "→ Parsing global telemetry...",
+        "→ Activating anomaly detection grid...",
+        "Threat Vector Analysis: Online",
+        "Resilience Quotient: Optimal",
+        "Sophia AI: Passive Mode Activated"
+    ];
+    let logDelay = 500;
+    bootLog.forEach((line, index) => {
+        setTimeout(() => {
+            console.log(line);
+        }, index * logDelay);
+    });
 });
