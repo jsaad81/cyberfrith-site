@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 /* Tailwind CSS directives */
 @tailwind base;
@@ -7,138 +7,232 @@
 @tailwind utilities;
 
 /* Custom Font Families */
-.font-montserrat {
-    font-family: 'Montserrat', sans-serif;
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
 }
 
-.font-roboto {
-    font-family: 'Roboto', sans-serif;
+.font-jetbrains-mono {
+    font-family: 'JetBrains Mono', monospace;
 }
 
-/* Custom Animations */
-@keyframes fadeInUp {
+/* Custom Colors */
+.text-neon-blue { color: #00FFFF; } /* Cyan */
+.text-neon-green { color: #00FF00; } /* Bright Green */
+.text-crimson { color: #FF0040; } /* Bright Red/Pink */
+.bg-black { background-color: #000000; }
+.bg-gray-950 { background-color: #050505; } /* Even darker gray */
+
+/* General Body & Root Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #00FFFF; /* Default text color */
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Background Circuit Overlay Animation */
+.background-circuit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px; /* Adjust grid size */
+    animation: background-flow 30s linear infinite;
+    z-index: 0;
+}
+
+@keyframes background-flow {
     from {
-        opacity: 0;
-        transform: translateY(20px);
+        background-position: 0 0;
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        background-position: 50px 50px; /* Moves the pattern */
     }
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0; /* Hidden initially */
+/* Hero Section Specifics */
+.typing-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    border-radius: 8px;
+    min-height: 4rem; /* Ensure enough space for typing */
 }
 
-.delay-200 { animation-delay: 0.2s; }
-.delay-400 { animation-delay: 0.4s; }
-
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* Blinking Cursor for Typing Animation */
+.blinking-cursor {
+    font-weight: 100;
+    color: #00FF00;
+    -webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
 }
 
-.animate-slide-in-left {
-    animation: slideInLeft 0.7s ease-out forwards;
-    opacity: 0;
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* General Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.animate-slide-in-right {
-    animation: slideInRight 0.7s ease-out forwards;
-    opacity: 0;
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
 }
 
-@keyframes pulseOnce {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+/* Glow Effect for Text and Buttons */
+.glow-text {
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF;
 }
 
-.animate-pulse-once {
-    animation: pulseOnce 0.8s ease-in-out;
+.glow-button {
+    background-color: #00FFFF;
+    color: #000; /* Text color for glowing button */
+    border: none;
+    box-shadow: 0 0 15px #00FFFF, 0 0 30px #00FFFF;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Intersection Observer Animations (handled by JS, but classes defined here) */
-.animated-card {
+.glow-button:hover {
+    box-shadow: 0 0 25px #00FFFF, 0 0 50px #00FFFF;
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Navigation Links Hover Effect */
+.nav-link {
+    position: relative;
+    color: #00FFFF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #00FF00;
+    box-shadow: 0 0 8px #00FF00;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #00FF00;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Section Title Underline/Glow Effect */
+.section-title {
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block; /* To make pseudo-element width respect content */
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Adjust width as needed */
+    height: 3px;
+    background: linear-gradient(to right, transparent, #FF0040, transparent);
+    box-shadow: 0 0 10px #FF0040;
+}
+
+/* Cyber Animate Class for Scroll-Triggered Effects */
+.cyber-animate {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.animated-card.is-visible {
+.cyber-animate.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.animated-wargame-item {
+.cyber-animate.delay-100 { transition-delay: 0.1s; }
+.cyber-animate.delay-200 { transition-delay: 0.2s; }
+.cyber-animate.delay-300 { transition-delay: 0.3s; }
+.cyber-animate.delay-400 { transition-delay: 0.4s; }
+.cyber-animate.delay-500 { transition-delay: 0.5s; }
+.cyber-animate.delay-600 { transition-delay: 0.6s; }
+
+/* Service Card & Tool Item Styling */
+.service-card, .tool-item {
+    background-color: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.service-card:hover, .tool-item:hover {
+    border-color: #00FF00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), inset 0 0 10px rgba(0, 255, 0, 0.2);
+    transform: translateY(-5px) scale(1.02);
+}
+
+.service-card::before, .tool-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    transition: transform 0.5s ease-in-out;
+    transform: rotate(0deg);
     opacity: 0;
-    transform: translateX(-50px); /* Default for left side */
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-.animated-wargame-item.right {
-    transform: translateX(50px); /* For right side */
-}
-
-.animated-wargame-item.is-visible {
+.service-card:hover::before, .tool-item:hover::before {
+    transform: rotate(360deg);
     opacity: 1;
-    transform: translateX(0);
 }
 
-/* Styling for the Kaspersky Map */
-.map-container {
-    border: 3px solid #0d9488; /* Teal border, adjust thickness and color as desired */
-    border-radius: 8px; /* Slightly rounded corners for the border */
-    overflow: hidden; /* Ensures border-radius applies correctly to iframe */
-    box-shadow: 0 0 15px rgba(0, 200, 150, 0.5); /* Optional: A subtle glow effect */
-    position: relative; /* Needed for potential future adjustments */
+/* Form Input Styling */
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #00FFFF;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.1);
 }
 
-/* Ensure the iframe fills its container */
-.kaspersky-map-iframe {
-    display: block; /* Removes extra space below iframe */
-    width: 100%; /* Make sure it fills the container */
-    height: 500px; /* Set a specific height */
+.form-input:focus {
+    outline: none;
+    border-color: #00FF00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), inset 0 0 8px rgba(0, 255, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Custom scroll-to-top button (not included in HTML, but good to have) */
-#scrollToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 20px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: #0d9488; /* Teal background */
-    color: white; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 18px; /* Increase font size */
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-#scrollToTopBtn:hover {
-    background-color: #14b8a6; /* Darker teal on hover */
-    transform: scale(1.1);
+/* Placeholder color */
+.form-input::placeholder {
+    color: rgba(0, 255, 255, 0.6);
 }
