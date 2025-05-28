@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>View Code</title>
+  <style>
+    body {
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      white-space: pre-wrap;
+      padding: 2rem;
+    }
+    h1 { color: #0ff; }
+  </style>
+</head>
+<body>
+  <h1>Project Code Viewer</h1>
+  <pre id="code">Loading...</pre>
+  <script>
+    fetch('assets/all_code.txt')
+      .then(res => res.text())
+      .then(text => document.getElementById('code').textContent = text)
+      .catch(err => document.getElementById('code').textContent = 'Error: ' + err);
+  </script>
+</body>
+</html>
