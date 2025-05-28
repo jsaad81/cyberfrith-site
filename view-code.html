@@ -2,23 +2,17 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>View Code</title>
+  <title>Code Part 1</title>
   <style>
-    body {
-      background: #111;
-      color: #0f0;
-      font-family: monospace;
-      white-space: pre-wrap;
-      padding: 2rem;
-    }
+    body { background: #111; color: #0f0; font-family: monospace; white-space: pre-wrap; padding: 2rem; }
     h1 { color: #0ff; }
   </style>
 </head>
 <body>
-  <h1>Project Code Viewer</h1>
+  <h1>Project Code — Part 1</h1>
   <pre id="code">Loading...</pre>
   <script>
-    fetch('assets/all_code.txt')
+    fetch('assets/code1.txt')
       .then(res => res.text())
       .then(text => document.getElementById('code').textContent = text)
       .catch(err => document.getElementById('code').textContent = 'Error: ' + err);
