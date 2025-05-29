@@ -1,49 +1,62 @@
-// MATRIX RAIN EFFECT
-const canvas = document.getElementById('matrix');
-const ctx = canvas.getContext('2d');
-
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
-
-const letters = '01';
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
-
-function drawMatrix() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#00ff99';
-  ctx.font = fontSize + 'px monospace';
-
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
-    }
-    drops[i]++;
-  }
+/* Reset & Base Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  background: black;
+  color: #00ff99;
 }
 
-setInterval(drawMatrix, 33);
-
-// TYPEWRITER EFFECT
-const typewriter = document.getElementById('typewriter');
-const audio = document.getElementById('keystroke');
-
-const message = 'Cyber War Simulation';
-let index = 0;
-
-function typeEffect() {
-  if (index < message.length) {
-    typewriter.textContent += message.charAt(index);
-    audio.currentTime = 0;
-    audio.play();
-    index++;
-    setTimeout(typeEffect, 150);
-  }
+canvas#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
 }
 
-typeEffect();
+.hero {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
+}
+
+#typewriter {
+  font-size: 2.5rem;
+  white-space: nowrap;
+  border-right: 2px solid #00ff99;
+  animation: blink-caret 0.75s step-end infinite;
+  margin-bottom: 2rem;
+}
+
+.intro-text p {
+  font-size: 1.4rem;
+  max-width: 900px;
+  line-height: 1.8;
+  margin: 0;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #00ff99; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
