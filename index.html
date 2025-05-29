@@ -1,154 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberFrith | Resilience. Intelligence. Trust.</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Frith</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-neon-blue font-jetbrains-mono overflow-x-hidden relative">
+<body>
+  <canvas id="matrix"></canvas>
 
-    <div class="background-circuit-overlay"></div>
+  <div class="hero">
+    <h1 id="typewriter"></h1>
+    <div class="intro-text">
+      <p>I build security systems with precision.<br>
+         I design cyber defense from the ground up.<br>
+         I craft systems that hold the line.<br>
+         I architect networks.<br>
+         I harden systems.<br><br>
+         I build systems that speak for themselves.<br>
+         If you're under attack—I'm ready.<br>
+         My tools are already built. My methods are proven.<br><br>
+         I act based on your business needs—<br>
+         not noise, not panic.<br><br>
+         This isn't a pitch. It's a posture.
+      </p>
+    </div>
+  </div>
 
-    <header class="fixed top-0 left-0 w-full z-50 p-4 bg-black bg-opacity-70 backdrop-filter backdrop-blur-sm">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-orbitron tracking-wider text-neon-green glow-text">CyberFrith</a>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#tools" class="nav-link">Tools</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="home" class="relative h-screen flex items-center justify-center text-center px-6">
-        <div class="relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-orbitron font-bold leading-tight text-white mb-4 animate-fade-in">
-                CyberFrith | Resilience. Intelligence. Trust.
-            </h1>
-            <div class="typing-container text-2xl md:text-4xl text-neon-blue font-jetbrains-mono h-24 flex justify-center items-center overflow-hidden">
-                <span id="hero-text"></span><span class="blinking-cursor">|</span>
-            </div>
-            <a href="#contact" class="mt-12 inline-block px-10 py-4 text-xl font-orbitron font-bold rounded-full cta-button glow-button">
-                Schedule a Cyber Risk Assessment
-            </a>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 px-6 bg-black relative z-10">
-        <div class="container mx-auto">
-            <h2 class="text-5xl font-orbitron font-bold text-center mb-16 text-electric-blue section-title">
-                <span class="glow-text">Services</span>: Digital Rebirth Protocols
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="service-card cyber-animate">
-                    <h3 class="text-3xl font-orbitron text-neon-green mb-4">Red Teaming</h3>
-                    <p class="text-gray-300">Penetrating defenses, mimicking adversaries. Unveiling vulnerabilities before they are exploited. Surgical precision in adversarial simulation.</p>
-                </div>
-                <div class="service-card cyber-animate delay-100">
-                    <h3 class="text-3xl font-orbitron text-neon-green mb-4">Incident Response</h3>
-                    <p class="text-gray-300">First line of defense in the cyber battlefield. Rapid containment, eradication, and recovery. From breach to complete restoration of trust.</p>
-                </div>
-                <div class="service-card cyber-animate delay-200">
-                    <h3 class="text-3xl font-orbitron text-neon-green mb-4">Cloud Security</h3>
-                    <p class="text-gray-300">Fortifying your presence in the digital ether. Secure cloud migrations, robust architecture design, and continuous monitoring for resilience.</p>
-                </div>
-                <div class="service-card cyber-animate delay-300">
-                    <h3 class="text-3xl font-orbitron text-neon-green mb-4">Zero Trust Architectures</h3>
-                    <p class="text-gray-300">Never trust, always verify. Designing perimeters that adapt, securing access at every touchpoint. The future of enterprise defense, today.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 px-6 bg-gray-950 relative z-10">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-5xl font-orbitron font-bold text-center mb-16 text-crimson section-title">
-                <span class="glow-text">About</span>: The Architect of Resilience
-            </h2>
-            <div class="text-lg leading-relaxed space-y-6">
-                <p class="cyber-animate">
-                    For over 13 years, I've navigated the front lines of cybersecurity. From high-stakes incidents to long-term strategy, my work is forged through fire—and rebuilt for resilience. This is more than a role—it's a mission to protect innovation at its most vulnerable.
-                </p>
-                <p class="cyber-animate delay-100">
-                    My philosophy blends technical mastery with strategic foresight. I don't just respond to threats; I architect systems that outmaneuver them. Each solution I build is both a tactical advantage and a shield of clarity, built on trust.
-                </p>
-                <p class="cyber-animate delay-200">
-                    I am CyberFrith—a sentinel in the digital age. My vow is to design intelligent defenses where security becomes second nature, and resilience is built into the very code of your enterprise.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" class="py-24 px-6 bg-black relative z-10">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-5xl font-orbitron font-bold text-center mb-16 text-electric-blue section-title">
-                <span class="glow-text">Arsenal</span>: Instruments of Precision
-            </h2>
-            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
-                <div class="tool-item cyber-animate">
-                    <span class="text-7xl mb-4 block">🖧</span>
-                    <h3 class="text-2xl font-orbitron text-neon-green">Kali Linux</h3>
-                    <p class="text-gray-400 text-sm">The Penetrator's Blade</p>
-                </div>
-                <div class="tool-item cyber-animate delay-100">
-                    <span class="text-7xl mb-4 block">🕷️</span>
-                    <h3 class="text-2xl font-orbitron text-neon-green">Burp Suite</h3>
-                    <p class="text-gray-400 text-sm">Web Recon & Exploit Framework</p>
-                </div>
-                <div class="tool-item cyber-animate delay-200">
-                    <span class="text-7xl mb-4 block">📡</span>
-                    <h3 class="text-2xl font-orbitron text-neon-green">Wireshark</h3>
-                    <p class="text-gray-400 text-sm">Deep Packet Forensics</p>
-                </div>
-                <div class="tool-item cyber-animate delay-300">
-                    <span class="text-7xl mb-4 block">👁️</span>
-                    <h3 class="text-2xl font-orbitron text-neon-green">OSINT</h3>
-                    <p class="text-gray-400 text-sm">Open Source Intelligence Gathering</p>
-                </div>
-                <div class="tool-item cyber-animate delay-400">
-                    <span class="text-7xl mb-4 block">🧠</span>
-                    <h3 class="text-2xl font-orbitron text-neon-green">SentinelGPT</h3>
-                    <p class="text-gray-400 text-sm">AI-Powered Threat Analysis</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6 bg-gray-950 relative z-10">
-        <div class="container mx-auto max-w-xl text-center">
-            <h2 class="text-5xl font-orbitron font-bold text-center mb-16 text-crimson section-title">
-                <span class="glow-text">Contact</span>: Request Tactical Intel
-            </h2>
-            <p class="text-lg text-gray-300 mb-8 leading-relaxed cyber-animate delay-100">
-                The battle for digital sovereignty never rests. When precision, intelligence, and unwavering trust are paramount, initiate contact.
-            </p>
-            <form action="mailto:info@cyberfrith.network" method="post" enctype="text/plain" class="space-y-6 max-w-md mx-auto">
-                <input type="text" name="name" placeholder="Your Designation" class="form-input cyber-animate delay-200">
-                <input type="email" name="email" placeholder="Your Secure Channel" class="form-input cyber-animate delay-300">
-                <textarea name="message" rows="5" placeholder="Your Tactical Briefing..." class="form-input cyber-animate delay-400"></textarea>
-                <button type="submit" class="w-full px-8 py-4 text-xl font-orbitron font-bold rounded-full cta-button glow-button cyber-animate delay-500">
-                    Transmit Briefing
-                </button>
-            </form>
-            <p class="text-sm text-gray-400 mt-8 cyber-animate delay-600">
-                Expect an encrypted response within 24 standard cycles.
-            </p>
-        </div>
-    </section>
-
-    <footer class="bg-black text-gray-500 py-8 text-center text-sm relative z-10">
-        <div class="container mx-auto">
-            <p>&copy; 2025 CyberFrith. All rights reserved. Code forged in shadow.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <audio id="keystroke" src="sounds/keystroke.mp3"></audio>
+  <script src="script.js"></script>
 </body>
 </html>
